@@ -7,8 +7,11 @@ from users.forms import CustomUserCreationForm
 def dashboard(request):
     return render(request, "users/dashboard.html")
 
-def homepage(request):
-	return render(request, "home.html")
+def about(request):
+	return render(request, "users/about.html")
+
+def base(request):
+    return render(request, "base.html")
 
 def register(request):
     if request.method == "GET":
