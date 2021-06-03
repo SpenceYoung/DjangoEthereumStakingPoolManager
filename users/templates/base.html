@@ -7,8 +7,17 @@
     span.helptext {
         display: none;
     }
-</style>
+	body {
+		background-color: white;
+		color: black;
+	}
 
+	.dark-mode {
+		background-color: black;
+		color: white;
+	}
+</style>
+<body>
 <h1>Welcome to Spence's staking pool interface</h1>
 <table border="3">
 	<td>
@@ -17,10 +26,20 @@
 	<td>
 		<a href="{% url 'about' %}">About</a>
 	</td>
+	<td>
+		<button onclick="myFunction()" align="right">Toggle dark mode</button>
+	</td>
 </table>
 <hr size="">
 
 </hr>
+</body>
+<script type="text/javascript">	
+	function myFunction() {
+	  var element = document.body;
+	  element.classList.toggle("dark-mode");
+	}
+</script>
 
 {% block content %}
 {% endblock %}

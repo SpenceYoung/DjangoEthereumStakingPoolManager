@@ -12,4 +12,4 @@ class CustomUserCreationForm(UserCreationForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = ('discordName',)
+        fields = ['discordName']

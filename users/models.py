@@ -10,6 +10,11 @@ class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	discordName = models.TextField(max_length=80, blank=True)
 	creation_date = models.DateField(null=True, blank=True)
+	contributions = models.FloatField(null=True, blank=True)
+	rewards = models.FloatField(null=True, blank=True)
+
+class PoolManager(models.Model):
+	total = models.FloatField(null=True, blank=True)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
