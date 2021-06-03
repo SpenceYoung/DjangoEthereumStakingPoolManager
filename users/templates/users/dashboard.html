@@ -3,9 +3,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div>
 Hello, {{ user.username|default:'Guest' }}!
 Your account was created on: {{ user.profile.creation_date }}
+</div>
 
+{% if user.is_authenticated %}
+<div>
+Your contributions:
+</div>
+<img></img>
+{% endif %}
 
 <div>
     {% if user.is_authenticated %}
