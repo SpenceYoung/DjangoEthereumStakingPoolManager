@@ -1,0 +1,24 @@
+<!--users/templates/users/dashboard.html-->
+
+{% extends 'base.html' %}
+
+<table>
+<tr>
+<td>
+Crypto
+</td>
+<td>
+Amount in pool
+</td>
+</tr>
+{% for x in pools %}
+<tr>
+<td>
+{x.cryptoName}
+</td>
+<td>
+{x.amount}
+</td>
+</tr>
+{% endfor %}
+</table>

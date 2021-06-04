@@ -2,6 +2,7 @@ from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from users.forms import CustomUserCreationForm, ProfileForm
+from users.models import PoolManager
 
 # Create your views here.
 def dashboard(request):
@@ -9,6 +10,11 @@ def dashboard(request):
 
 def about(request):
 	return render(request, "users/about.html")
+
+def poolstats(request):
+    return render(request, "users/poolstats.html",
+            {"pools":PoolManager.objects.all()}
+        )
 
 def base(request):
     return render(request, "base.html")
