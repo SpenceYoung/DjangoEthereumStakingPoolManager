@@ -2,23 +2,25 @@
 
 {% extends 'base.html' %}
 
-<table>
-<tr>
-<td>
-Crypto
-</td>
-<td>
-Amount in pool
-</td>
-</tr>
-{% for x in pools %}
-<tr>
-<td>
-{{x.cryptoName}}
-</td>
-<td>
-{{x.total}}
-</td>
-</tr>
-{% endfor %}
+{% block content %}
+<table border="1">
+	<tr>
+		<td>
+		Crypto
+		</td>
+		<td>
+		Amount in pool
+		</td>
+	</tr>
+	{% for x in pools %}
+	<tr>
+		<td>
+		{{x.cryptoName}}
+		</td>
+		<td>
+		{{x.total}}
+		</td>
+	</tr>
+	{% endfor %}
 </table>
+{% endblock %}
