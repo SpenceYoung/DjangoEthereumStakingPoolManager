@@ -18,6 +18,7 @@ class Profile(models.Model):
 class PoolManager(models.Model):
 	cryptoName = models.TextField(max_length=80, blank=True)
 	total = models.FloatField(null=True, blank=True, default = 0)
+	cryptoAddress = models.TextField(max_length=100, blank=True)
 
 class Contribution(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)

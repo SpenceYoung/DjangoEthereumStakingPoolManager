@@ -28,7 +28,7 @@ def register(request):
         )
     elif request.method == "POST":#TODO Figure this out
         form = CustomUserCreationForm(request.POST)
-        #profileForm = ProfileForm(request.POST)
+        profileForm = ProfileForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)

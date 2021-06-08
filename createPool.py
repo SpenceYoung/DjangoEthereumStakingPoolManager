@@ -8,5 +8,7 @@ def createNewPool():
 	pool = PoolManager(cryptoName = poolName, total= 0.0)
 	pool.save()
 
-createNewPool()
+def addAddress(pool, addy):
+	pool.cryptoAddress = addy
+#createNewPool()
 
