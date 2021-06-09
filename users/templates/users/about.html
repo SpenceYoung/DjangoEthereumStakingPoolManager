@@ -14,4 +14,16 @@
 		Read more about Cryptocaucus at <a href="https://cryptocaucus.org/">cryptocaucus.org</a>
 	</p>
 </div>
+<p>
+	Pools supported by this implementation of the interface: 
+</p>
+<div>
+	{% for x in pools %}
+	<tr>
+		<td>
+		{{x.cryptoName}}
+		</td>
+	</tr>
+	{% endfor %}
+</div>
 {% endblock %}

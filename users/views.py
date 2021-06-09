@@ -9,7 +9,9 @@ def dashboard(request):
     return render(request, "users/dashboard.html")
 
 def about(request):
-	return render(request, "users/about.html")
+	return render(request, "users/about.html",
+        {"pools":PoolManager.objects.all()}
+    )
 
 def poolstats(request):
     return render(request, "users/poolstats.html",
