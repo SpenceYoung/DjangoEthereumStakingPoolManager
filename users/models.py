@@ -11,14 +11,20 @@ class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	discordName = models.TextField(max_length=80, blank=True)
 	creation_date = models.DateField(null=True, blank=True)
-	contribImage = models.ImageField(null=True, blank=True,storage=fs)
-	contributions = models.FloatField(null=True, blank=True, default = 0)
-	rewards = models.FloatField(null=True, blank=True, default = 0)
+
 
 class PoolManager(models.Model):
 	cryptoName = models.TextField(max_length=80, blank=True)
 	total = models.FloatField(null=True, blank=True, default = 0)
 	cryptoAddress = models.TextField(max_length=100, blank=True)
+
+class ContributionManager(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	pool = models.OneToOneField(PoolManager, on_delete=models.CASCADE)
+	amount = models.FloatField(null=True, blank=True, default = 0)
+	contribImage = models.ImageField(null=True, blank=True,storage=fs)
+	contributions = models.FloatField(null=True, blank=True, default = 0)
+	rewards = models.FloatField(null=True, blank=True, default = 0)
 
 class Contribution(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
