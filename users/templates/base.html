@@ -23,21 +23,23 @@
     <title>Spence's staking pool interface</title>
   </head>
 <body>
-<h1>Welcome to Spence's staking pool interface</h1>
-<table border="3">
-	<td>
-		<a href="{% url 'dashboard' %}">Dashboard</a>
-	</td>
-	<td>
-		<a href="{% url 'poolstats' %}">Pool Statistics</a>
-	</td>
-	<td>
-		<a href="{% url 'about' %}">About</a>
-	</td>
-	<td>
-		<button onclick="myFunction()" align="right">Toggle dark mode</button>
-	</td>
-</table>
+<div class="row justify-content-center">
+	<h1>Welcome to Spence's staking pool interface</h1>
+</div>
+	<table border="3">
+		<td>
+			<a href="{% url 'dashboard' %}">Dashboard</a>
+		</td>
+		<td>
+			<a href="{% url 'poolstats' %}">Pool Statistics</a>
+		</td>
+		<td>
+			<a href="{% url 'about' %}">About</a>
+		</td>
+		<td>
+			<button onclick="myFunction()" align="right">Toggle dark mode</button>
+		</td>
+	</table>
 <hr size="">
 
 </hr>
