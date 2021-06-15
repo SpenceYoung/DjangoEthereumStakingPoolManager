@@ -55,6 +55,7 @@ defusedxml==0.6.0
 diff-match-patch @ file:///tmp/build/80754af9/diff-match-patch_1594828741838/work
 distributed @ file:///opt/concourse/worker/volumes/live/bd66aa48-5cf5-4b60-6ed4-f204fff153f6/volume/distributed_1605066538557/work
 Django==3.2.3
+django-crispy-forms==1.12.0
 docutils==0.16
 entrypoints==0.3
 et-xmlfile==1.0.1
