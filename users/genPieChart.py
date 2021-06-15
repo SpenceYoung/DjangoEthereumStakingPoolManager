@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from users.models import PoolManager, Users, Contribution, ContributionManager
 
 
 
