@@ -5,13 +5,36 @@
 {% block content %}
 <div>
 Hello, {{ user.username|default:'Guest' }}!
+</div>
+
+{% if user.is_authenticated %}
+<div>
 Your account was created on: {{ user.profile.creation_date }}
 </div>
+{% endif %}
 
 {% if user.is_authenticated %}
 <div>
 Your contributions:
 </div>
+<table>
+	<td>
+		Crypto
+	</td>
+	<td>
+		Amount in pool
+	</td>
+	{% for x in contrib %}
+	<tr>
+		<td>
+		{{x.pool.cryptoName}}
+		</td>
+		<td>
+		{{x.amount}}
+		</td>
+	</tr>
+	{% endfor %}
+</table>
 <img></img>
 {% endif %}
 

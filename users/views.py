@@ -2,11 +2,18 @@ from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from users.forms import CustomUserCreationForm, ProfileForm
-from users.models import PoolManager
+from users.models import PoolManager, Contribution
 
 # Create your views here.
 def dashboard(request):
-    return render(request, "users/dashboard.html")
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
+        return render(request, "users/dashboard.html",
+                {"contrib":Contribution.objects.filter(user=request.user)}
+            )
+    else:
+          return render(request, "users/dashboard.html")
 
 def about(request):
 	return render(request, "users/about.html",

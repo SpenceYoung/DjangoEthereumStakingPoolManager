@@ -30,7 +30,7 @@ class Contribution(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	pool = models.OneToOneField(PoolManager, on_delete=models.CASCADE)
 	amount = models.FloatField(null=True, blank=True, default = 0)
-
+	creation_date = models.DateField(null=True, blank=True,auto_now_add=True)
 
 
 @receiver(post_save, sender=User)
